@@ -1,11 +1,9 @@
-
-
 # ATmega328P Reaction Time Game
 > Bare-metal AVR Assembly — no Arduino libraries, no abstractions, just direct register manipulation.
 
 A reaction-time measurement game written entirely in AVR assembly language for the **ATmega328P** (Arduino Uno). An LED and buzzer fire after a random delay; the player presses a button as fast as possible. The elapsed time is measured in milliseconds and sent over UART to a Serial Monitor with a performance rating.
 
-Built as a **COAL (Computer Organization and Assembly Language)** course project.
+
 
 ---
 
@@ -170,19 +168,41 @@ Longer delays (`delay_100ms`, `delay_200ms`, `delay_500ms`, `delay_2000ms`) are 
 
 ## Building & Flashing
 
-Assemble with **AVR Studio** or **AVRDUDE**. To flash to an Arduino Uno:
+### Requirements
+
+- [Microchip Studio 7](https://www.microchip.com/en-us/tools-resources/develop/microchip-studio) (Windows) — `m328pdef.inc` is bundled with the IDE, no separate install needed
+- An Arduino Uno (ATmega328P)
+- A USB cable and any Serial Monitor (the one built into Microchip Studio works fine)
+
+### Build
+
+1. Open `ReactionTimeGame.atsln` in Microchip Studio
+2. Hit **Build → Build Solution** (F7)
+3. The compiled `.hex` appears in `ReactionTimeGame/Debug/`
+
+### Flash
+
+Use the built-in **Tools → Device Programming** in Microchip Studio, or flash manually with avrdude:
 
 ```bash
 avrdude -c arduino -p m328p -P COM3 -b 115200 \
-        -U flash:w:"reaction time game.hex":I
+        -U flash:w:"ReactionTimeGame.hex":I
 ```
 
-Change `COM3` to your port (`/dev/ttyUSB0` on Linux). Open any Serial Monitor at **9600 baud** to see results.
+Change `COM3` to whichever port your Arduino is on (check Device Manager). Open any Serial Monitor at **9600 baud** to see output.
 
 ---
 
+## Project Structure
 
+```
+ReactionTimeGame/
+├── ReactionTimeGame.atsln        # Microchip Studio solution — open this
+├── ReactionTimeGame/
+│   ├── ReactionTimeGame.asmproj  # Project file
+│   └── reaction_time_game.asm    # Full AVR assembly source
+└── README.md
+```
 
 ---
-
 
