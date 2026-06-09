@@ -6,6 +6,8 @@ A reaction-time measurement game written entirely in AVR assembly language for t
 
 
 ---
+## Circuit Diagram
+<img width="1314" height="739" alt="circuit diagram" src="https://github.com/user-attachments/assets/784c6b88-1031-4629-8127-4fedf5461fba" />
 
 ## Demo Output (Serial Monitor)
 
