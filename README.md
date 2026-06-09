@@ -181,24 +181,8 @@ Change `COM3` to your port (`/dev/ttyUSB0` on Linux). Open any Serial Monitor at
 
 ---
 
-## Project Structure
 
-```
-.
-├── reaction_time_game.asm   # Full AVR assembly source
-├── reaction_time_game.hex   # Compiled Intel HEX (flash this)
-└── README.md
-```
 
 ---
 
-## Team
 
-| Name | Roll No |
-|------|---------|
-| AbdurRehman | F24608034 |
-| Shoaib | F24608044 |
-| Hamza Tariq | F24608024 |
-| Abdullah Adil | F24608026 |
-
-NUTECH — SE-2024 · Computer Organization and Assembly Language
