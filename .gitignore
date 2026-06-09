@@ -1,0 +1,12 @@
+# Microchip Studio build output
+Debug/
+Release/
+
+# Misc build artifacts
+*.o
+*.d
+*.map
+*.lss
+*.eep
+*.srec
+*.elf
